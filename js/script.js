@@ -1,25 +1,4 @@
 // Сперва главные функции калькулятора
-function addition(numberOne, numberTwo) {
-  return numberOne + numberTwo;
-}
-
-function subtraction(numberOne,numberTwo) {
-  return numberOne - numberTwo;
-}
-
-function multiplication(numberOne,numberTwo) {
-  return numberOne * numberTwo;
-}
-
-function division(numberOne,numberTwo) {
-  return numberOne / numberTwo;
-}
-
-function reset() {
-  document.getElementById('first-num').value = '';
-  document.getElementById('second-num').value = '';
-}
-
 function output(result) {
   $outputDisplay.value = result;
 }
@@ -48,20 +27,21 @@ $buttonCollection.forEach(function (button) {
 
     switch (buttonValue) {
       case 'addition':
-        result = addition(numberOne, numberTwo);
+        result = numberOne + numberTwo;
         break;
       case 'subtraction':
-        result = subtraction(numberOne, numberTwo);
+        result = numberOne - numberTwo;
         break;
       case 'multiply':
-        result = multiplication(numberOne, numberTwo);
+        result = numberOne * numberTwo;
         break;
       case 'division':
-        result = division(numberOne, numberTwo);
+        result = numberOne / numberTwo;
         break;
       case 'reset':
+        document.getElementById('first-num').value = '';
+        document.getElementById('second-num').value = '';
         result = '';
-        reset();
     }
 
     output(result);
