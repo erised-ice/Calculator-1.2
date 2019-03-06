@@ -1,7 +1,3 @@
-// Сперва главные функции калькулятора
-
-
-// Затем вспомогательные функции
 function getInputValue(id) {
   return document.getElementById(id).value;
 }
@@ -9,7 +5,7 @@ function getInputValue(id) {
 function stringToNumber(string) {
   return +string;
 }
-// Затем что делать с кнопками и полями ввода
+
 const $outputDisplay = document.querySelector('.js-output');
 const $buttonCollection = document.querySelectorAll('.js-button');
 
@@ -57,11 +53,50 @@ $buttonCollection.forEach(function (button) {
 
 const $mainInner = document.querySelector('.js-main');
 const $buttonTimeTheme = document.querySelector('.js-time-theme-button');
-console.log($buttonTimeTheme);
 
 function changeTimeTheme() {
   $mainInner.classList.toggle('main--night-theme');
+  $mainInner.classList.remove('main--light-theme');
+  $mainInner.classList.remove('main--green-theme');
+  $mainInner.classList.remove('main--yellow-theme');
+  $mainInner.classList.remove('main--dark-theme');
 }
 
 $buttonTimeTheme.addEventListener('click', changeTimeTheme);
 
+const $themeButtons = document.querySelectorAll('.js-theme-button');
+
+function changeTheme(event) {
+  const buttonData = event.target.dataset.theme;
+
+  switch (buttonData) {
+    case 'dark':
+      $mainInner.classList.toggle('main--dark-theme');
+      $mainInner.classList.remove('main--light-theme');
+      $mainInner.classList.remove('main--green-theme');
+      $mainInner.classList.remove('main--yellow-theme');
+      break;
+    case 'light':
+      $mainInner.classList.toggle('main--light-theme');
+      $mainInner.classList.remove('main--dark-theme');
+      $mainInner.classList.remove('main--green-theme');
+      $mainInner.classList.remove('main--yellow-theme');
+      break;
+    case 'green':
+      $mainInner.classList.toggle('main--green-theme');
+      $mainInner.classList.remove('main--light-theme');
+      $mainInner.classList.remove('main--dark-theme');
+      $mainInner.classList.remove('main--yellow-theme');
+      break;
+    case 'yellow':
+      $mainInner.classList.toggle('main--yellow-theme');
+      $mainInner.classList.remove('main--light-theme');
+      $mainInner.classList.remove('main--green-theme');
+      $mainInner.classList.remove('main--dark-theme');
+      break;
+  }
+}
+
+$themeButtons.forEach(function (button) {
+  button.addEventListener('click', changeTheme);
+});

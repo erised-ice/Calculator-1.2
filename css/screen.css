@@ -14,9 +14,34 @@ body {
   border-radius: 3px;
 }
 
-.main--night-theme {
+.main--night-theme .button {
+  background:  linear-gradient(to top left, #3e6984 36%, #2e5792 100%);
+  color: #fff5bd;
+}
+
+.main--night-theme .display {
+  background:  linear-gradient(to bottom right, #25116f 36%, #391d59 100%, #360851 36%);
+  color: #ecffcf;
+}
+
+.main--night-theme .display--number {
+  background:  linear-gradient(to bottom right, #2e1586 36%, #422365 100%, #3b0859 36%);
+}
+
+.main--dark-theme {
+  background:  linear-gradient(to top left, #47b0f1 36%, #040326 100%);
+}
+
+.main--light-theme {
   background:  linear-gradient(to top left, #47b0f1 36%, #87f52d 100%);
 }
+.main--green-theme {
+  background:  linear-gradient(to top left, #44741d 36%, #669120 100%);
+}
+.main--yellow-theme {
+  background:  linear-gradient(to top left, #fec519 36%, #f5ca5a 100%);
+}
+
 
 .display {
   width: 100%;
