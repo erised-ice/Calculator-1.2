@@ -14,6 +14,10 @@ body {
   border-radius: 3px;
 }
 
+.main--night-theme {
+  background:  linear-gradient(to top left, #47b0f1 36%, #87f52d 100%);
+}
+
 .display {
   width: 100%;
   font-size: 40px;

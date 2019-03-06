@@ -52,3 +52,16 @@ function calculate(event) {
 $buttonCollection.forEach(function (button) {
   button.addEventListener('click', calculate);
 });
+
+// Themes
+
+const $mainInner = document.querySelector('.js-main');
+const $buttonTimeTheme = document.querySelector('.js-time-theme-button');
+console.log($buttonTimeTheme);
+
+function changeTimeTheme() {
+  $mainInner.classList.toggle('main--night-theme');
+}
+
+$buttonTimeTheme.addEventListener('click', changeTimeTheme);
+
