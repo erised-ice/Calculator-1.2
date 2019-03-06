@@ -1,7 +1,6 @@
 // Сперва главные функции калькулятора
-function output(result) {
-  $outputDisplay.value = result;
-}
+
+
 // Затем вспомогательные функции
 function getInputValue(id) {
   return document.getElementById(id).value;
@@ -13,6 +12,10 @@ function stringToNumber(string) {
 // Затем что делать с кнопками и полями ввода
 const $outputDisplay = document.querySelector('.js-output');
 const $buttonCollection = document.querySelectorAll('.js-button');
+
+function output(result) {
+  $outputDisplay.value = result;
+}
 
 function calculate(event) {
   const button = event.target;
@@ -43,7 +46,7 @@ function calculate(event) {
       result = '';
   }
 
-  output();
+  output(result);
 }
 
 $buttonCollection.forEach(function (button) {
